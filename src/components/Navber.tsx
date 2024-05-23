@@ -42,9 +42,15 @@ const navbar: NavbarProps[] = [
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("/");
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleLinkClick = (href: string) => {
+    setActiveLink(href);
+    setIsMobileMenuOpen(false); // Close the mobile menu on link click
   };
 
   return (
@@ -56,8 +62,9 @@ const Navbar = () => {
               <li key={page.id} className="md:mx-4">
                 <Link
                   to={page.href}
+                  onClick={() => handleLinkClick(page.href)}
                   className={`md:flex md:items-center font-khmer hover:text-blueHover transition ease-in-out delay-150 duration-150 ${
-                    isMobileMenuOpen ? "hidden" : ""
+                    activeLink === page.href ? "text-blueHover" : ""
                   }`}
                 >
                   <span className="md:text-lg mr-2">{page.icon}</span>
@@ -68,7 +75,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      <span className="absolute right-0 top-[25px] md:hidden">
+      <span className="absolute right-0 top-[25px] md:hidden mr-3.5 ">
         <GiHamburgerMenu size={20} onClick={toggleMobileMenu} />
       </span>
       <ul
@@ -78,8 +85,16 @@ const Navbar = () => {
       >
         {navbar.map((page: NavbarProps) => {
           return (
-            <Link key={page.id} to={page.href} onClick={toggleMobileMenu}>
-              <li className="mb-3 hover:bg-blueHover hover:text-white py-1 px-3 font-khmer  transition ease-in-out delay-150 duration-150">
+            <Link
+              key={page.id}
+              to={page.href}
+              onClick={() => handleLinkClick(page.href)}
+            >
+              <li
+                className={`mb-3 hover:bg-blueHover hover:text-white py-1 px-3 font-khmer transition ease-in-out delay-150 duration-150 ${
+                  activeLink === page.href ? "bg-blueHover text-white" : ""
+                }`}
+              >
                 {page.page}
               </li>
             </Link>
