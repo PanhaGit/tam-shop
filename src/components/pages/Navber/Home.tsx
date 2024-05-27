@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Banner from "../../Home/Banner";
+import Banner from "../../banner/Banner";
 import dataBanner from "../../../assets/banner/dataBanner";
+import ProductProps from "../../Home/product/ProductProps";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -20,8 +21,8 @@ const Home = () => {
   };
 
   return (
-    <div className="md:w-full">
-      <div className="md:w-11/12 m-auto bg-slate-500">
+    <div className="md:w-full w-full">
+      <div className="md:w-11/12 m-auto w-11/12">
         <Banner
           dataBanner={dataBanner}
           currentSlide={currentSlide}
@@ -29,6 +30,7 @@ const Home = () => {
           onPreviousSlide={handlePreviousSlide}
           onNextSlide={handleNextSlide}
         />
+        <ProductProps />
       </div>
     </div>
   );

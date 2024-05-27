@@ -63,7 +63,7 @@ const Navbar = () => {
                 <Link
                   to={page.href}
                   onClick={() => handleLinkClick(page.href)}
-                  className={`md:flex md:items-center font-khmer hover:text-blueHover transition ease-in-out delay-150 duration-150 ${
+                  className={`md:flex md:items-center font-font hover:text-blueHover transition ease-in-out delay-150 duration-150 ${
                     activeLink === page.href ? "text-blueHover" : ""
                   }`}
                 >
@@ -91,7 +91,7 @@ const Navbar = () => {
               onClick={() => handleLinkClick(page.href)}
             >
               <li
-                className={`mb-3 hover:bg-blueHover hover:text-white py-1 px-3 font-khmer transition ease-in-out delay-150 duration-150 ${
+                className={`mb-3 hover:bg-blueHover hover:text-white py-1 px-3 font-font transition ease-in-out delay-150 duration-150 ${
                   activeLink === page.href ? "bg-blueHover text-white" : ""
                 }`}
               >
