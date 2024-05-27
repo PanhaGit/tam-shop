@@ -3,6 +3,7 @@ import App from "../App";
 import Home from "../components/pages/Navber/Home";
 import BrandProduct from "../components/pages/Navber/BrandProduct";
 import Shop from "../components/pages/Navber/Shop";
+import Detail from "../components/detail/Detail";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/contact_us",
         element: <BrandProduct />,
+      },
+      {
+        path: "/detail",
+        element: <Detail />,
       },
     ],
   },

@@ -10,6 +10,13 @@ import pro3_bestsellers from "../assets/product/pro_bestsellers/3.png";
 import pro4_bestsellers from "../assets/product/pro_bestsellers/4.jpg";
 import pro5_bestsellers from "../assets/product/pro_bestsellers/5.jpg";
 
+//new prodcut
+import pro1_new from "../assets/product/pro_new/1.png";
+import pro2_new from "../assets/product/pro_new/2.png";
+// import pro3_new from "../assets/product/pro_new/3.jpg";
+import pro4_new from "../assets/product/pro_new/4.png";
+import pro5_new from "../assets/product/pro_new/Adjustable2400DPIOpticalWirelessMouse.png";
+
 export interface ProductDiscountType {
   id: number;
   model: string;
@@ -95,5 +102,53 @@ export const Bestsellers: ProductDiscountType[] = [
     amount: 150,
     image: pro5_bestsellers,
     brand: "SoundPro",
+  },
+];
+
+export const NewProduct: ProductDiscountType[] = [
+  {
+    id: 1,
+    model: "JBL - GO3 Portable Waterproof Wireless Speaker - Blue",
+    dis_price: 199.99,
+    price: 249.99,
+    amount: 50,
+    image: pro1_new,
+    brand: "JBL",
+  },
+  {
+    id: 2,
+    model: "New Product 2 Model",
+    dis_price: 149.99,
+    price: 199.99,
+    amount: 30,
+    image: pro2_new,
+    brand: "New Brand 2",
+  },
+  // {
+  //   id: 3,
+  //   model: "New Product 3 Model",
+  //   dis_price: 59.99,
+  //   price: 79.99,
+  //   amount: 20,
+  //   image: pro3_new,
+  //   brand: "New Brand 3",
+  // },
+  {
+    id: 4,
+    model: "Baseus Magnetic Power Bank",
+    dis_price: 99.99,
+    price: 129.99,
+    amount: 10,
+    image: pro4_new,
+    brand: "Baseus",
+  },
+  {
+    id: 5,
+    model: "Adjustable 2400 DPI Optical Wireless Mouse",
+    dis_price: 29.99,
+    price: 39.99,
+    amount: 15,
+    image: pro5_new,
+    brand: "BrandZ",
   },
 ];
