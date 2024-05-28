@@ -4,6 +4,7 @@ import Home from "../components/pages/Navber/Home";
 import BrandProduct from "../components/pages/Navber/BrandProduct";
 import Shop from "../components/pages/Navber/Shop";
 import Detail from "../components/detail/Detail";
+import Contact from "../components/pages/Navber/Contact";
 
 const router = createBrowserRouter([
   {
@@ -24,10 +25,10 @@ const router = createBrowserRouter([
       },
       {
         path: "/contact_us",
-        element: <BrandProduct />,
+        element: <Contact />,
       },
       {
-        path: "/detail:id",
+        path: "/detail/:id",
         element: <Detail />,
       },
     ],

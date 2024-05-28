@@ -45,11 +45,11 @@ const Banner = ({
 
   return (
     <div className="md:w-full overflow-hidden relative">
-      <div className="md:w-full md:h-[480px] h-[300px] flex">
+      <div className="md:w-full md:h-[480px] h-[150px] flex transition-all ease-in-out duration-150 delay-150">
         {dataBanner.map((img: BannerProps, index: number) => (
           <div
             key={img.id}
-            className={`flex-shrink-0 w-full h-full transition ease-in-out duration-200 ${
+            className={`flex-shrink-0 w-full h-full transition-all ease-in-out duration-150 delay-150  ${
               index === currentSlide ? "block" : "hidden"
             }`}
           >
@@ -59,7 +59,7 @@ const Banner = ({
       </div>
 
       {/* btn right and left */}
-      <div className="absolute top-0 h-full w-full flex justify-between items-center z-10">
+      <div className="absolute top-0 h-full w-full flex justify-between items-center z-10 px-3">
         <button
           onClick={onPreviousSlide}
           className="bg-white md:p-2 rounded-full hover:opacity-90"
@@ -76,11 +76,11 @@ const Banner = ({
       {/* btn right and left */}
 
       {/* circrel */}
-      <div className="absolute bottom-0 py-3 flex justify-center items-center gap-2 w-full">
+      <div className="absolute bottom-0 py-3 flex justify-center items-center gap-1 w-full">
         {dataBanner.map((circrel, index) => (
           <div
             onClick={() => setCurrentSlide(index)}
-            className={`md:w-4 md:h-4 w-3 h-3 rounded-full ${
+            className={`md:w-4 md:h-4 w-3 h-3 rounded-full transition-all ease-in-out duration-150 delay-150 ${
               index === currentSlide
                 ? "bg-white md:w-8 w-6"
                 : "bg-transparent border"

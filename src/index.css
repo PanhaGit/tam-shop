@@ -20,23 +20,6 @@
   background-color: #03aed2;
 }
 
-.PopularProducts {
-  @apply font-font relative font-semibold;
-}
-
-.PopularProducts::before {
-  content: "";
-  position: absolute;
-  top: 40px;
-  left: 45%;
-  width: 10%;
-  height: 4px;
-  background-color: #03aed2;
-}
-.shadow-card {
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-}
 /* .beforeLine {
   @apply my-4 bg-blueHover w-60 py-3 text-lg text-white px-2 font-font font-semibold;
 }

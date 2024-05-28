@@ -22,8 +22,8 @@ const Home = () => {
   };
 
   return (
-    <div className="md:w-full w-full overflow-hidden">
-      <div className="md:w-11/12 m-auto w-11/12">
+    <div className="md:w-full w-full">
+      <div className="md:w-11/12 md:m-auto w-full">
         <Banner
           dataBanner={dataBanner}
           currentSlide={currentSlide}
@@ -31,6 +31,8 @@ const Home = () => {
           onPreviousSlide={handlePreviousSlide}
           onNextSlide={handleNextSlide}
         />
+      </div>
+      <div className="md:w-11/12 m-auto w-11/12">
         <ProductProps />
         <Popular />
       </div>
