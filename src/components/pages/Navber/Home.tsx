@@ -22,7 +22,7 @@ const Home = () => {
   };
 
   return (
-    <div className="md:w-full w-full">
+    <div className="md:w-full w-full overflow-hidden">
       <div className="md:w-11/12 m-auto w-11/12">
         <Banner
           dataBanner={dataBanner}
