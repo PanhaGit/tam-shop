@@ -2,6 +2,7 @@ import { useState } from "react";
 import Banner from "../../banner/Banner";
 import dataBanner from "../../../assets/banner/dataBanner";
 import ProductProps from "../../Home/product/ProductProps";
+import Popular from "../../Popularproducts/Popular";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -31,6 +32,7 @@ const Home = () => {
           onNextSlide={handleNextSlide}
         />
         <ProductProps />
+        <Popular />
       </div>
     </div>
   );
