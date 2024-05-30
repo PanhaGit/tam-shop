@@ -13,7 +13,7 @@ const Detail = () => {
   }
 
   return (
-    <div>
+    <div className="w-full">
       <div className="flex border ">
         <div className="flex p-2 md:w-11/12 m-auto items-cente">
           <Link to={"/"}>

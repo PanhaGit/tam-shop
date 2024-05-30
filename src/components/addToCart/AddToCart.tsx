@@ -1,15 +1,26 @@
-// AddToCart.tsx
-import React from "react";
+import React, { useState } from "react";
 import { useCart } from "../../context/CartContext";
 import emptyCart from "../../assets/cart.jpg";
 import { Link } from "react-router-dom";
 import { RiArrowDropRightLine } from "react-icons/ri";
+import aba from "../../assets/ABA/aba.jpg";
 
 const AddToCart: React.FC = () => {
   const { cart, removeFromCart } = useCart();
+  const [showModal, setShowModal] = useState(false);
+  const [modalImage, setModalImage] = useState("");
 
   const handleRemoveItem = (itemId: number) => {
     removeFromCart(itemId);
+  };
+
+  const handleCheckoutClick = (image: string) => {
+    setModalImage(image);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -21,7 +32,7 @@ const AddToCart: React.FC = () => {
           </Link>
           <RiArrowDropRightLine size={30} />
           <p className="font-font md:text-xl text-lg text-blueHover underline">
-            Page Cart
+            Page Deteil
           </p>
         </div>
       </div>
@@ -69,9 +80,35 @@ const AddToCart: React.FC = () => {
                 </li>
               ))}
             </ul>
+            <div className="mt-4">
+              <button
+                className="bg-blue-500 text-white px-4 py-2 mt-4 w-full rounded-md hover:bg-blue-600"
+                onClick={() => handleCheckoutClick(aba)} // Pass the image URL to the handler function
+              >
+                Proceed to Checkout
+              </button>
+            </div>
           </div>
         )}
       </div>
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50">
+          <div className="bg-white p-8 rounded-md relative">
+            <img
+              src={modalImage}
+              alt="Product"
+              className="w-full md:h-[600px] h-[300px]  object-contain"
+            />
+            <button
+              className="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-md hover:bg-blue-600"
+              onClick={closeModal}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
