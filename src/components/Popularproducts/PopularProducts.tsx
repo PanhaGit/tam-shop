@@ -1,7 +1,7 @@
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowRight, MdOutlineAddShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { ProductDiscountType } from "../../Data/Pro_discount";
-
+import { useCart } from "../../context/CartContext";
 interface ProductsProps {
   ProductDiscount: ProductDiscountType[];
   text: string;
@@ -11,6 +11,17 @@ const PopularProducts: React.FC<ProductsProps> = ({
   ProductDiscount,
   text,
 }) => {
+  const { addToCart } = useCart();
+  const handleAddToCart = (product: ProductDiscountType) => {
+    addToCart({
+      id: product.id,
+      model: product.model,
+      quantity: 1,
+      image: product.image,
+      brand: product.brand,
+      dis_price: product.dis_price,
+    });
+  };
   return (
     <div className="w-full">
       <div className="flex items-center justify-between">
@@ -33,30 +44,43 @@ const PopularProducts: React.FC<ProductsProps> = ({
           <p className="text-center text-lg">មិនមានផលិតផល!</p>
         ) : (
           ProductDiscount.map((popular: ProductDiscountType) => (
-            <Link
-              to={`/detail/${popular.id}`}
+            <div
               key={popular.id}
-              state={{ product: popular }}
+              className="shadow-sm border rounded-xl overflow-hidden hover:shadow-lg cursor-pointer transition-all ease-linear delay-75 duration-150"
             >
-              <div className="shadow-sm border rounded-xl hover:shadow-lg cursor-pointer transition-all ease-linear delay-75 duration-150">
-                <div className="md:w-full bg-black md:h-[250px] rounded-t-xl w-full h-[150px]">
+              <Link
+                to={`/detail/${popular.id}`}
+                key={popular.id}
+                state={{ product: popular }}
+              >
+                <div className="md:w-full bg-black md:h-[250px] w-full h-[150px] relative">
                   <img
                     src={popular.image}
                     alt={`${popular.brand} product`}
-                    className="md:w-full md:h-full w-full h-full rounded-xl"
+                    className="w-full h-full object-cover"
                     loading="lazy"
                   />
                 </div>
-                <div className="md:w-full md:h-[90px] p-1 w-full h-[90px]">
-                  <h3 className="font-font text-lg font-semibold text-colorProduct">
-                    {popular.brand}
-                  </h3>
-                  <p className="text-lg font-semibold text-red-500">
-                    {popular.price}
-                  </p>
-                </div>
+              </Link>
+              <div className="p-4">
+                <h3 className="font-bold text-lg text-colorProduct">
+                  {popular.model}
+                </h3>
+                <p className="text-lg font-semibold text-red-500">
+                  {popular.price} $
+                </p>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleAddToCart(popular);
+                  }}
+                  className="flex items-center bg-blueHover text-white px-3 py-1 rounded-md mt-2"
+                >
+                  <MdOutlineAddShoppingCart size={20} className="mr-1" />
+                  Add to Cart
+                </button>
               </div>
-            </Link>
+            </div>
           ))
         )}
       </div>
