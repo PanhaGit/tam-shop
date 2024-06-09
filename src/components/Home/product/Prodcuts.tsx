@@ -43,7 +43,7 @@ const Products: React.FC<ProductsProps> = ({ products, type }) => {
             <p className="text-lg text-red-400 line-through font-font">
               {product.price.toFixed(2)} $
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center md:gap-6 gap-2">
               <h3 className="bg-blueHover w-24 text-center py-1 font-font font-medium text-white rounded-full">
                 {product.dis_price.toFixed(2)} $
               </h3>
@@ -52,9 +52,10 @@ const Products: React.FC<ProductsProps> = ({ products, type }) => {
                   e.preventDefault();
                   handleAddToCart(product);
                 }}
-                className="bg-blue-500 text-white px-4 py-2 mt-2"
+                className="flex items-center font-font bg-blueHover text-white px-1 py-1 rounded-md mt-2"
               >
-                <MdOutlineAddShoppingCart />
+                <MdOutlineAddShoppingCart size={20} className="mr-1" />
+                ទិញឥវ៉ាន់
               </button>
             </div>
           </div>

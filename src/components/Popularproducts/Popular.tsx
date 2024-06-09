@@ -1,8 +1,10 @@
 import PopularProducts from "./PopularProducts";
 import {
-  Bestsellers,
-  ProductDiscount,
-  NewProduct,
+  Electronics,
+  smartWatch,
+  phoneComputer,
+  KarlSiliconeCase,
+  TabletStandHolder,
 } from "../../Data/Pro_discount";
 const Popular = () => {
   return (
@@ -14,11 +16,16 @@ const Popular = () => {
         <div className="bg-blueHover h-0.5 w-28 mt-1"></div>
       </div>
       <PopularProducts
-        ProductDiscount={Bestsellers}
+        ProductDiscount={Electronics}
         text="ឧបករណ៍អេឡិចត្រូនិច"
       />
-      <PopularProducts ProductDiscount={ProductDiscount} text="នាឡិកាឆ្លាតវៃ" />
-      <PopularProducts ProductDiscount={NewProduct} text="ឧបករណ៍បំពងសម្លេង" />
+      <PopularProducts ProductDiscount={smartWatch} text="នាឡិកាឆ្លាតវៃ" />
+      <PopularProducts ProductDiscount={KarlSiliconeCase} text="សំបកការពារ" />
+      <PopularProducts
+        ProductDiscount={phoneComputer}
+        text="ឧបករណ៍បំពងសម្លេង"
+      />
+      <PopularProducts ProductDiscount={TabletStandHolder} text="កាស" />
     </>
   );
 };

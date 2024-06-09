@@ -1,12 +1,27 @@
+// Detail.tsx
 import { useLocation } from "react-router-dom";
 import { ProductDiscountType } from "../../Data/Pro_discount";
-import { MdAddShoppingCart } from "react-icons/md";
+import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { RiArrowDropRightLine } from "react-icons/ri";
+import { useCart } from "../../context/CartContext";
 
 const Detail = () => {
   const location = useLocation();
-  const product = location.state.product as ProductDiscountType;
+  const product = location.state?.product as ProductDiscountType;
+  // add to cart
+  const { addToCart } = useCart();
+
+  const handleAddToCart = (product: ProductDiscountType) => {
+    addToCart({
+      id: product.id,
+      model: product.model,
+      quantity: 1,
+      image: product.image,
+      brand: product.brand,
+      dis_price: product.dis_price,
+    });
+  };
 
   if (!product) {
     return <p>Product not found</p>;
@@ -15,14 +30,12 @@ const Detail = () => {
   return (
     <div className="w-full">
       <div className="flex border ">
-        <div className="flex p-2 md:w-11/12 m-auto items-cente">
+        <div className="flex p-2 md:w-11/12 m-auto items-center">
           <Link to={"/"}>
-            <p className="font-font md:text-xl text-lg">ទំព័រដើម</p>
+            <p className="font-font md:text-lg text-sm">ទំព័រដើម</p>
           </Link>
           <RiArrowDropRightLine size={30} />
-          <p className="font-font md:text-xl text-lg text-blueHover underline">
-            Page Deteil
-          </p>
+          <p className="font-font md:text-lg text-sm">{product.model}</p>
         </div>
       </div>
       <div className="w-11/12 mx-auto py-4 px-4 md:px-0">
@@ -48,8 +61,15 @@ const Detail = () => {
                   ${product.price}
                 </span>
               </p>
-              <button className="mt-4 font-font bg-yellow-500 text-white py-2 px-4 rounded flex items-center gap-2">
-                Buy Now <MdAddShoppingCart size={20} />
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleAddToCart(product);
+                }}
+                className="flex items-center font-font bg-blueHover text-white px-3 py-1 rounded-md mt-2"
+              >
+                <MdOutlineAddShoppingCart size={20} className="mr-1" />
+                ទិញឥវ៉ាន់
               </button>
               {product.advantages && (
                 <div className="mt-4 font-font">

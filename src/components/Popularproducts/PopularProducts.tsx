@@ -74,10 +74,10 @@ const PopularProducts: React.FC<ProductsProps> = ({
                     e.preventDefault();
                     handleAddToCart(popular);
                   }}
-                  className="flex items-center bg-blueHover text-white px-3 py-1 rounded-md mt-2"
+                  className="flex items-center font-font bg-blueHover text-white px-3 py-1 rounded-md mt-2"
                 >
                   <MdOutlineAddShoppingCart size={20} className="mr-1" />
-                  Add to Cart
+                  ទិញឥវ៉ាន់
                 </button>
               </div>
             </div>
