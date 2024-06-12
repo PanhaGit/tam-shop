@@ -53,11 +53,11 @@ const PopularProducts: React.FC<ProductsProps> = ({
                 key={popular.id}
                 state={{ product: popular }}
               >
-                <div className="md:w-full bg-black md:h-[250px] w-full h-[150px] relative">
+                <div className="md:w-full  md:h-[250px] w-full h-[150px] relative">
                   <img
                     src={popular.image}
                     alt={`${popular.brand} product`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover hover:scale-110 transition ease-linear duration-75 delay-75"
                     loading="lazy"
                   />
                 </div>

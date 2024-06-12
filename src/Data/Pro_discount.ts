@@ -65,7 +65,7 @@ export interface ProductDiscountType {
 export const ProductDiscount: ProductDiscountType[] = [
   {
     id: 1,
-    model: "Apple AirPods Pro (2nd Gen) Wireless Earbuds",
+    model: "Apple AirPods Pro",
     dis_price: 199.99,
     price: 249.99,
     amount: 50,
@@ -81,7 +81,7 @@ export const ProductDiscount: ProductDiscountType[] = [
   },
   {
     id: 2,
-    model: "HD Black Apple SmartWatch Series 2",
+    model: "Apple SmartWatch",
     dis_price: 149.99,
     price: 199.99,
     amount: 30,
@@ -97,7 +97,7 @@ export const ProductDiscount: ProductDiscountType[] = [
   },
   {
     id: 3,
-    model: "Smart Watch for Women",
+    model: "Smart Watch Women",
     dis_price: 59.99,
     price: 79.99,
     amount: 20,
@@ -201,7 +201,7 @@ export const Bestsellers: ProductDiscountType[] = [
 export const NewProduct: ProductDiscountType[] = [
   {
     id: 9,
-    model: "JBL - GO3 Portable Waterproof Wireless Speaker - Blue",
+    model: "JBL - GO3 Portable",
     dis_price: 199.99,
     price: 249.99,
     amount: 50,
@@ -249,7 +249,7 @@ export const NewProduct: ProductDiscountType[] = [
   },
   {
     id: 12,
-    model: "Baseus Magnetic Power Bank",
+    model: "Baseus Magnetic",
     dis_price: 99.99,
     price: 129.99,
     amount: 10,
@@ -265,7 +265,7 @@ export const NewProduct: ProductDiscountType[] = [
   },
   {
     id: 13,
-    model: "Adjustable 2400 DPI Optical Wireless Mouse",
+    model: "Adjustable",
     dis_price: 29.99,
     price: 39.99,
     amount: 15,
@@ -284,7 +284,7 @@ export const NewProduct: ProductDiscountType[] = [
 export const TabletStandHolder: ProductDiscountType[] = [
   {
     id: 14,
-    model: "Choetech 7-in-1 Type-C To HDMI HUB Laptop Stand",
+    model: "HDMI HUB Laptop Stand",
     dis_price: 59.99,
     price: 79.99,
     amount: 20,
@@ -318,7 +318,7 @@ export const TabletStandHolder: ProductDiscountType[] = [
   },
   {
     id: 16,
-    model: "OMOTON Tablet Stand Holder Adjustable",
+    model: "Tablet Stand Holder",
     dis_price: 19.99,
     price: 29.99,
     amount: 50,
@@ -373,7 +373,7 @@ export const smartWatch: ProductDiscountType[] = [
   },
   {
     id: 19,
-    model: "Reloj Inteligente BOZLUN para Mujeres",
+    model: "Reloj Inteligente",
     dis_price: 99.99,
     price: 129.99,
     amount: 20,
@@ -390,7 +390,7 @@ export const smartWatch: ProductDiscountType[] = [
   },
   {
     id: 20,
-    model: "Smart Band with Multiple Features",
+    model: "Multiple Features",
     dis_price: 59.99,
     price: 79.99,
     amount: 25,
@@ -407,7 +407,7 @@ export const smartWatch: ProductDiscountType[] = [
   },
   {
     id: 21,
-    model: "Smart Watch T800 Ultra Series 8",
+    model: "Ultra Series 8",
     dis_price: 199.99,
     price: 249.99,
     amount: 15,
@@ -424,7 +424,7 @@ export const smartWatch: ProductDiscountType[] = [
   },
   {
     id: 22,
-    model: "Yocuby Smart Watch for Women",
+    model: "Watch for Women",
     dis_price: 99.99,
     price: 129.99,
     amount: 20,
@@ -445,7 +445,7 @@ export const smartWatch: ProductDiscountType[] = [
 export const phoneComputer: ProductDiscountType[] = [
   {
     id: 23,
-    model: "Brookstone Wired Purple Cat Ear Headphones",
+    model: "Cat Ear Headphones",
     dis_price: 39.99,
     price: 49.99,
     amount: 50,
@@ -517,7 +517,7 @@ export const KarlSiliconeCase: ProductDiscountType[] = [
   },
   {
     id: 27,
-    model: "Karl Lagerfeld",
+    model: "Lagerfeld",
     dis_price: 39.99,
     price: 49.99,
     amount: 50,
@@ -534,7 +534,7 @@ export const KarlSiliconeCase: ProductDiscountType[] = [
   },
   {
     id: 28,
-    model: "Karl Lagerfeld Logo Case",
+    model: "Lagerfeld",
     dis_price: 49.99,
     price: 59.99,
     amount: 60,
@@ -555,7 +555,7 @@ export const KarlSiliconeCase: ProductDiscountType[] = [
 export const Electronics: ProductDiscountType[] = [
   {
     id: 29,
-    model: "Certified Essri Lightning Charging Air Blue",
+    model: "Certified Essri",
     dis_price: 19.99,
     price: 29.99,
     amount: 100,
@@ -572,7 +572,7 @@ export const Electronics: ProductDiscountType[] = [
   },
   {
     id: 30,
-    model: "Magnetic LED Charging Cable - Gold",
+    model: "Magnetic LED Charging Cable",
     dis_price: 14.99,
     price: 24.99,
     amount: 120,
@@ -623,7 +623,7 @@ export const Electronics: ProductDiscountType[] = [
   },
   {
     id: 33,
-    model: "Type-c 8-in-1 Hub Multiport Adapter",
+    model: "Multiport Adapter",
     dis_price: 49.99,
     price: 59.99,
     amount: 40,

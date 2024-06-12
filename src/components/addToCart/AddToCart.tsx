@@ -38,7 +38,7 @@ const AddToCart: React.FC = () => {
     .toFixed(2);
 
   return (
-    <div className="w-full">
+    <div className="w-full ">
       <div className="flex border ">
         <div className="flex p-2 md:w-11/12 m-auto items-center">
           <Link to={"/"}>
@@ -56,7 +56,7 @@ const AddToCart: React.FC = () => {
       <div className="w-full md:h-[400px] h-[200px]">
         <img src={bannerCart} alt="bannerCart" className="w-full h-full" />
       </div>
-      <div className="w-11/12 mx-auto p-4">
+      <div className="md:w-11/12 w-11/12 m-auto">
         <h1 className="text-3xl font-bold mb-4 text-center font-font underline">
           Your Cart
         </h1>
@@ -67,7 +67,7 @@ const AddToCart: React.FC = () => {
             alt="Empty Cart"
           />
         ) : (
-          <div>
+          <div className=" ">
             <ul>
               {cart.map((item) => (
                 <li
@@ -78,19 +78,19 @@ const AddToCart: React.FC = () => {
                     <img
                       src={item.image}
                       alt={item.model}
-                      className="w-16 h-16 rounded-full m-auto"
+                      className="w-16 h-16 m-auto"
                     />
                     <div>
-                      <p className="text-lg font-semibold">{item.model}</p>
+                      <p className="md:text-lg font-semibold">{item.model}</p>
                       <p className="text-sm text-gray-500">
                         Brand: {item.brand}
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center pr-3">
+                  <div className="flex items-center px-1">
                     <button
                       onClick={() => handleDecreaseQuantity(item.id)}
-                      className="text-white p-2 rounded-full font-bold bg-red-500 hover:bg-red-400 transition ease-in delay-200 drop-shadow-2xl"
+                      className="text-white md:p-2 p-1 rounded-full font-bold bg-red-500 hover:bg-red-400 transition ease-in delay-200 drop-shadow-2xl"
                     >
                       <FaMinus />
                     </button>
@@ -99,12 +99,12 @@ const AddToCart: React.FC = () => {
                     </p>
                     <button
                       onClick={() => handleIncreaseQuantity(item.id)}
-                      className="text-white p-2 rounded-full font-bold bg-green-500 hover:bg-green-400 transition ease-in delay-200 drop-shadow-2xl"
+                      className="text-white md:p-2 p-1 rounded-full font-bold bg-green-500 hover:bg-green-400 transition ease-in delay-200 drop-shadow-2xl"
                     >
                       <FaPlus />
                     </button>
                   </div>
-                  <p className="text-lg font-semibold">
+                  <p className="md:text-lg text-[15px] mx-1 font-semibold">
                     ${(item.dis_price * item.quantity).toFixed(2)}
                   </p>
                   <button
@@ -119,7 +119,7 @@ const AddToCart: React.FC = () => {
             <div className="mt-4 text-right">
               <p className="text-xl font-bold">Subtotal: ${subtotal}</p>
               <button
-                className="bg-blue-500 text-white px-4 py-2 mt-4 w-full rounded-md hover:bg-blue-600"
+                className="bg-blueHover text-white px-4 py-2 my-4 w-full rounded-md hover:bg-blueHover hover:opacity-90 transition ease-linear duration-75 delay-75"
                 onClick={() => handleCheckoutClick(aba)}
               >
                 Proceed to Checkout

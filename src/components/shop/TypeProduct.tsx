@@ -20,10 +20,23 @@ const typeProductTypes: TypeProductType[] = [
 
 const TypeProduct = () => {
   const { setSelectedType } = useFilter();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [activeMenuItem, setActiveMenuItem] = useState<string>("");
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleMenuItemClick = (typeName: string) => {
+    setSelectedType(typeName);
+    setActiveMenuItem(typeName);
+    setIsMenuOpen(false);
+  };
+
+  const getMenuItemClass = (typeName: string) => {
+    return typeName === activeMenuItem
+      ? "text-blueHover font-bold"
+      : "hover:text-blueHover";
   };
 
   return (
@@ -41,8 +54,10 @@ const TypeProduct = () => {
         {typeProductTypes.map((type) => (
           <ul key={type.id} className="my-4 font-font text-lg">
             <li
-              className="hover:text-blueHover transition ease-linear duration-75 cursor-pointer"
-              onClick={() => setSelectedType(type.name)}
+              className={`${getMenuItemClass(
+                type.name
+              )} transition ease-linear duration-75 cursor-pointer`}
+              onClick={() => handleMenuItemClick(type.name)}
             >
               {type.name}
             </li>
@@ -60,11 +75,10 @@ const TypeProduct = () => {
             {typeProductTypes.map((type) => (
               <ul key={type.id} className="my-4 font-font text-lg">
                 <li
-                  className="hover:text-blueHover transition ease-linear duration-75 cursor-pointer"
-                  onClick={() => {
-                    setSelectedType(type.name);
-                    setIsMenuOpen(false); // Close menu when a type is selected
-                  }}
+                  className={`${getMenuItemClass(
+                    type.name
+                  )} transition ease-linear duration-75 cursor-pointer`}
+                  onClick={() => handleMenuItemClick(type.name)}
                 >
                   {type.name}
                 </li>
