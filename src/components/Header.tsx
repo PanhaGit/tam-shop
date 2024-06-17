@@ -124,6 +124,7 @@ const Header: React.FC = () => {
                       <li key={product.id} className="p-2 hover:bg-gray-100">
                         <Link
                           to={`/detail/${product.id}`}
+                          state={{ product: product }}
                           className="flex items-center space-x-2"
                         >
                           <img
@@ -204,6 +205,7 @@ const Header: React.FC = () => {
                       <li key={product.id} className="p-2 hover:bg-gray-100">
                         <Link
                           to={`/detail/${product.id}`}
+                          state={{ product: product }}
                           className="flex items-center space-x-2"
                         >
                           <img
